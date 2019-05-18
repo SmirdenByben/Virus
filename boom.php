@@ -45,7 +45,7 @@ function encryptedVirus($virus){
     $iv
   );
 
-  $encodedVirus = base64_encode(encryptedVirus);
+  $encodedVirus = base64_encode($encryptedVirus);
   $encodedIV = base64_encode($iv);
   $encodedKey = base64_encode($key);
 
